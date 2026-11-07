@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stillness for Android Privacy</title>
+<meta name="description" content="What the Stillness Android app does with your screenshots, and what it never sends anywhere.">
+<link rel="icon" href="assets/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared/base.css">
+<style>
+main { padding: 64px 0 40px; }
+main .wrap { max-width: 720px; }
+.kicker { font-family: var(--font-mono); font-size: .78rem; color: var(--accent); letter-spacing: .06em; text-transform: uppercase; }
+h1 { font-size: clamp(2rem, 5vw, 2.8rem); line-height: 1.1; letter-spacing: -.03em; font-weight: 800; margin: 10px 0 12px; }
+.jump { display: flex; gap: 16px; margin: 0 0 40px; color: var(--muted); }
+section { margin: 0 0 56px; }
+section h2 { font-size: 1.5rem; letter-spacing: -.02em; margin: 0 0 6px; }
+section h3 { font-size: 1.05rem; margin: 28px 0 8px; }
+section p, section li { color: var(--muted); line-height: 1.65; }
+section ul { padding-left: 1.2em; }
+.date { color: var(--faint); font-size: .88rem; }
+</style>
+<script>
+  try { if (localStorage.getItem("stillness.theme") === "dark") document.documentElement.dataset.theme = "dark"; } catch {}
+</script>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="index.html"><img src="assets/icon.png" alt="">Stillness</a>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="kicker">Android</div>
+    <h1>Privacy Policy</h1>
+    <nav class="jump"><a href="#en">English</a><a href="#ko">한국어</a><a href="#ja">日本語</a></nav>
+
+    <section id="en" lang="en">
+      <h2>Stillness for Android</h2>
+      <p class="date">Last updated: 8 November 2026</p>
+      <p>Stillness is made by SeungHwan Song, an individual in the Republic of Korea. In short: your screenshots and their text stay on your phone, unless you turn on Send to PC, which sends them only to your own computer. We never receive them.</p>
+
+      <h3>Photos and screenshots</h3>
+      <ul>
+        <li><strong>Auto copy</strong> (off until you turn it on) needs photo access. It reads only screenshots saved after you turn it on. It never reads, lists or uploads your other photos.</li>
+        <li><strong>Copy by sharing</strong> reads only the image you share with the app.</li>
+        <li>Text is recognized on your phone with Google ML Kit and placed on your clipboard. The image and text are not stored by the app.</li>
+      </ul>
+
+      <h3>Send to PC</h3>
+      <p>Off by default. If you pair the app with Stillness on your computer and turn it on, each screenshot the app copies is sent straight to that computer over your Tailscale network, which encrypts it. It does not pass through any server of ours. Tailscale's own privacy policy covers its network service: <a href="https://tailscale.com/privacy-policy">tailscale.com/privacy-policy</a>. The pairing code (your computer's address and a secret key) is stored only on your phone.</p>
+
+      <h3>Google services</h3>
+      <p>Text recognition (ML Kit) and the pairing code scanner (Google Play services) are provided by Google. They run on your phone, but Google may receive device and usage information to keep them working, as described in <a href="https://developers.google.com/ml-kit/terms">ML Kit terms</a> and <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
+
+      <h3>What we do not do</h3>
+      <ul>
+        <li>No accounts, analytics, advertising or tracking.</li>
+        <li>Settings are saved only on your phone and removed when you uninstall the app.</li>
+      </ul>
+
+      <h3>Children</h3>
+      <p>The app is not directed at children under 14.</p>
+
+      <h3>Changes and contact</h3>
+      <p>We post changes on this page with a new date. Questions or requests: SeungHwan Song, <a href="mailto:hello@getstillness.app">hello@getstillness.app</a>.</p>
+    </section>
+
+    <section id="ko" lang="ko">
+      <h2>Stillness Android 앱</h2>
+      <p class="date">최종 수정일: 2026년 11월 8일</p>
+      <p>Stillness는 대한민국에 거주하는 개인 송승환이 만듭니다. 요약하면, 스크린샷과 그 글자는 폰 안에만 남습니다. 'PC로 보내기'를 켜면 본인 컴퓨터로만 보냅니다. 개발자는 이를 받지 않습니다. 영문 방침과 이 번역문이 다르면 영문을 따릅니다.</p>
+
+      <h3>사진과 스크린샷</h3>
+      <ul>
+        <li><strong>자동 복사</strong>(직접 켜기 전까지 꺼짐)에는 사진 접근 권한이 필요합니다. 켠 뒤에 저장된 스크린샷만 읽고, 다른 사진은 읽거나 목록을 만들거나 올리지 않습니다.</li>
+        <li><strong>공유로 복사</strong>는 앱에 공유한 이미지만 읽습니다.</li>
+        <li>글자 인식은 Google ML Kit로 폰 안에서 하고, 결과를 클립보드에 넣습니다. 앱은 이미지와 글자를 저장하지 않습니다.</li>
+      </ul>
+
+      <h3>PC로 보내기</h3>
+      <p>기본은 꺼짐입니다. 컴퓨터의 Stillness와 연결하고 켜면, 앱이 복사한 스크린샷을 Tailscale 네트워크(암호화됨)로 그 컴퓨터에 바로 보냅니다. 개발자 서버를 거치지 않습니다. Tailscale 네트워크 서비스에는 Tailscale의 방침이 적용됩니다: <a href="https://tailscale.com/privacy-policy">tailscale.com/privacy-policy</a>. 연결 코드(컴퓨터 주소와 비밀 키)는 폰에만 저장됩니다.</p>
+
+      <h3>Google 서비스</h3>
+      <p>글자 인식(ML Kit)과 연결 코드 스캐너(Google Play 서비스)는 Google이 제공합니다. 폰에서 실행되지만, Google이 서비스 유지를 위해 기기·사용 정보를 받을 수 있습니다. <a href="https://developers.google.com/ml-kit/terms">ML Kit 약관</a>, <a href="https://policies.google.com/privacy">Google 개인정보처리방침</a>을 참고하세요.</p>
+
+      <h3>하지 않는 것</h3>
+      <ul>
+        <li>계정, 사용 분석, 광고, 추적이 없습니다.</li>
+        <li>설정은 폰에만 저장되고, 앱을 지우면 함께 지워집니다.</li>
+      </ul>
+
+      <h3>아동</h3>
+      <p>만 14세 미만 아동을 대상으로 하지 않습니다.</p>
+
+      <h3>변경과 문의</h3>
+      <p>변경 내용은 새 날짜와 함께 이 페이지에 올립니다. 문의·요청: 송승환, <a href="mailto:hello@getstillness.app">hello@getstillness.app</a>. 개인정보 침해 신고는 개인정보침해신고센터(privacy.kisa.or.kr, 국번 없이 118)에 할 수 있습니다.</p>
+    </section>
+
+    <section id="ja" lang="ja">
+      <h2>Stillness Android アプリ</h2>
+      <p class="date">最終更新日: 2026年11月8日</p>
+      <p>Stillness は大韓民国在住の個人 SeungHwan Song が提供しています。要約すると、スクリーンショットとその文字はスマートフォンの中にだけ残ります。「PC に送る」をオンにした場合は、ご自身のコンピューターにだけ送ります。当方がそれを受け取ることはありません。英語版と本翻訳に相違がある場合は英語版が優先します。</p>
+
+      <h3>写真とスクリーンショット</h3>
+      <ul>
+        <li><strong>自動コピー</strong>(ご自身でオンにするまでオフ)には写真へのアクセス権限が必要です。オンにした後に保存されたスクリーンショットだけを読み、ほかの写真を読んだり一覧にしたりアップロードしたりはしません。</li>
+        <li><strong>共有でコピー</strong>は、アプリに共有した画像だけを読みます。</li>
+        <li>文字認識は Google ML Kit によりスマートフォン上で行い、結果をクリップボードに入れます。アプリは画像も文字も保存しません。</li>
+      </ul>
+
+      <h3>PC に送る</h3>
+      <p>初期設定はオフです。コンピューターの Stillness とペアリングしてオンにすると、アプリがコピーしたスクリーンショットを Tailscale ネットワーク(暗号化)経由でそのコンピューターに直接送ります。当方のサーバーは経由しません。Tailscale のネットワークサービスには同社のポリシーが適用されます: <a href="https://tailscale.com/privacy-policy">tailscale.com/privacy-policy</a>。ペアリングコード(コンピューターのアドレスと秘密鍵)はスマートフォンにのみ保存されます。</p>
+
+      <h3>Google のサービス</h3>
+      <p>文字認識(ML Kit)とペアリングコードのスキャナー(Google Play 開発者サービス)は Google が提供しています。スマートフォン上で動作しますが、Google がサービス維持のためにデバイス・利用情報を受け取る場合があります。<a href="https://developers.google.com/ml-kit/terms">ML Kit 利用規約</a>、<a href="https://policies.google.com/privacy">Google プライバシーポリシー</a>をご覧ください。</p>
+
+      <h3>行わないこと</h3>
+      <ul>
+        <li>アカウント、利用分析、広告、トラッキングはありません。</li>
+        <li>設定はスマートフォンにのみ保存され、アプリを削除すると一緒に消えます。</li>
+      </ul>
+
+      <h3>子ども</h3>
+      <p>14 歳未満の子どもを対象としていません。</p>
+
+      <h3>変更とお問い合わせ</h3>
+      <p>変更内容は新しい日付とともにこのページに掲載します。お問い合わせ: SeungHwan Song、<a href="mailto:hello@getstillness.app">hello@getstillness.app</a></p>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span class="brand"><img src="assets/icon.png" alt="">Stillness</span>
+    <a class="r" href="index.html">getstillness.app</a>
+  </div>
+</footer>
+</body>
+</html>

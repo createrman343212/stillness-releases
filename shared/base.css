@@ -1,0 +1,158 @@
+/* Shared tokens and page chrome for every site page. Light (default) uses the app colors;
+   <html data-theme="dark"> is the dark + orange look. */
+:root {
+  color-scheme: light;
+  --bg: #eef0f5;
+  --bg-2: rgb(255 255 255 / .42);
+  --panel: rgb(255 255 255 / .55);
+  --panel-2: rgb(255 255 255 / .85);
+  --panel-border: rgb(255 255 255 / .85);
+  --panel-shadow: inset 0 1px 0 rgb(255 255 255 / .9), 0 8px 28px rgb(30 40 80 / .08);
+  --fg: #1c1c1e;
+  --muted: rgb(60 60 67 / .78);
+  --faint: rgb(60 60 67 / .55);
+  --line: rgb(60 60 67 / .1);
+  --line-2: rgb(60 60 67 / .18);
+  --accent: #4c62f0;
+  --accent-2: #8b5cf6;
+  --on-accent: #ffffff;
+  --ok: #1f8a3e;
+  --ambient-1: rgb(120 160 255 / .35);
+  --ambient-2: rgb(200 150 255 / .28);
+  --glow-1: transparent;
+  --glow-2: transparent;
+  --header-bg: rgb(238 240 245 / .7);
+  --menu-bg: rgb(255 255 255 / .95);
+  --menu-shadow: 0 16px 40px rgb(30 40 80 / .14);
+  --btn-bg: #1c1c1e;
+  --btn-fg: #ffffff;
+  --btn-shadow: 0 6px 18px rgb(0 0 0 / .14);
+  --btn-shadow-hover: 0 10px 28px rgb(0 0 0 / .22);
+  --grad: linear-gradient(90deg, #4c62f0, #8b5cf6);
+  --ic-bg: rgb(76 98 240 / .1);
+  --ic-border: rgb(76 98 240 / .22);
+  --frame-fill: linear-gradient(135deg, rgb(120 160 255 / .28), rgb(200 150 255 / .24));
+  --code-fg: #2c2c34;
+  --code-q: #1f8a3e;
+  --final-bg: radial-gradient(60% 80% at 50% 0%, rgb(120 160 255 / .3), transparent 70%), radial-gradient(50% 70% at 80% 100%, rgb(200 150 255 / .28), transparent 70%), rgb(255 255 255 / .45);
+  --radius: 10px;
+  --radius-lg: 18px;
+  --font: "Inter", "Segoe UI Variable Text", "Segoe UI", "Pretendard", "Noto Sans KR", "Noto Sans JP", "Yu Gothic UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Cascadia Mono", Consolas, ui-monospace, monospace;
+  font-family: var(--font);
+  font-size: 16px;
+  line-height: 1.6;
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #07070a;
+  --bg-2: #0e0e13;
+  --panel: #13131a;
+  --panel-2: #1a1a23;
+  --panel-border: rgb(255 255 255 / .08);
+  --panel-shadow: none;
+  --fg: #f4f4f7;
+  --muted: #9b9bab;
+  --faint: #5d5d6c;
+  --line: rgb(255 255 255 / .08);
+  --line-2: rgb(255 255 255 / .14);
+  --accent: #ff9f0a;
+  --accent-2: #ff5e3a;
+  --on-accent: #160c00;
+  --ok: #30d158;
+  --ambient-1: transparent;
+  --ambient-2: transparent;
+  --glow-1: rgb(139 108 255 / .22);
+  --glow-2: rgb(255 159 10 / .14);
+  --header-bg: rgb(7 7 10 / .72);
+  --menu-bg: #13131a;
+  --menu-shadow: 0 20px 40px rgb(0 0 0 / .5);
+  --btn-bg: linear-gradient(180deg, #ffb53d, #ff9f0a);
+  --btn-fg: #160c00;
+  --btn-shadow: 0 0 0 1px rgb(255 180 60 / .6) inset, 0 10px 30px rgb(255 140 0 / .25);
+  --btn-shadow-hover: 0 0 0 1px rgb(255 200 90 / .8) inset, 0 14px 40px rgb(255 140 0 / .4);
+  --grad: linear-gradient(90deg, #ff9f0a, #ff5e3a 55%, #8b6cff);
+  --ic-bg: rgb(255 159 10 / .1);
+  --ic-border: rgb(255 159 10 / .25);
+  --frame-fill: linear-gradient(135deg, rgb(255 159 10 / .22), rgb(139 108 255 / .18));
+  --code-fg: #d6d6e0;
+  --code-q: #a5d6a7;
+  --final-bg: radial-gradient(60% 80% at 50% 0%, rgb(255 159 10 / .22), transparent 70%), radial-gradient(50% 70% at 80% 100%, rgb(139 108 255 / .2), transparent 70%), #0e0e13;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+body {
+  margin: 0; color: var(--fg); overflow-x: hidden;
+  background:
+    radial-gradient(60% 50% at 10% 0%, var(--ambient-1), transparent 70%),
+    radial-gradient(50% 45% at 100% 60%, var(--ambient-2), transparent 70%),
+    var(--bg);
+  background-attachment: fixed;
+}
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: 1160px; margin: 0 auto; padding: 0 16px; }
+.surface {
+  background: var(--panel); border: 1px solid var(--panel-border); box-shadow: var(--panel-shadow);
+  -webkit-backdrop-filter: blur(24px) saturate(180%); backdrop-filter: blur(24px) saturate(180%);
+}
+kbd {
+  font-family: var(--font-mono); font-size: .8em; padding: 3px 8px; border-radius: 6px; white-space: nowrap;
+  background: var(--panel-2); border: 1px solid var(--line-2); border-bottom-width: 2px; color: var(--fg);
+}
+.grad { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* Header */
+header { position: sticky; top: 0; z-index: 20; background: var(--header-bg); -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); }
+header .wrap { display: flex; align-items: center; gap: 12px; height: 64px; }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: -.01em; text-decoration: none; font-size: 1.05rem; }
+.brand img { width: 28px; height: 28px; }
+nav.links { display: flex; gap: 24px; margin: 0 8px 0 auto; }
+nav.links a { text-decoration: none; color: var(--muted); font-size: .92rem; font-weight: 500; }
+nav.links a:hover { color: var(--fg); }
+
+.lang { position: relative; }
+.lang-btn, .lang-menu button, .theme-btn {
+  display: flex; align-items: center; gap: 8px; font: inherit; font-size: .85rem; font-weight: 500; color: var(--fg); cursor: pointer;
+  background: var(--panel); border: 1px solid var(--line-2); border-radius: 8px; padding: 6px 10px;
+}
+.lang-btn:hover, .theme-btn:hover { border-color: var(--faint); }
+.lang svg { width: 20px; height: 14px; border-radius: 2px; flex: none; box-shadow: 0 0 0 1px var(--line); }
+.lang-menu { position: absolute; right: 0; top: calc(100% + 8px); min-width: 160px; padding: 6px; border-radius: 12px; background: var(--menu-bg); border: 1px solid var(--line-2); box-shadow: var(--menu-shadow); }
+.lang-menu button { width: 100%; border: 0; background: transparent; padding: 9px 10px; }
+.lang-menu button:hover { background: var(--line); }
+.lang-menu button[aria-checked="true"] { color: var(--accent); font-weight: 600; }
+.theme-btn { padding: 0; width: 34px; height: 32px; justify-content: center; }
+.theme-btn svg { width: 17px; height: 17px; }
+.theme-btn .sun { display: none; }
+:root[data-theme="dark"] .theme-btn .sun { display: block; }
+:root[data-theme="dark"] .theme-btn .moon { display: none; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 600; white-space: nowrap;
+  border-radius: 10px; padding: 14px 24px; color: var(--btn-fg); background: var(--btn-bg); box-shadow: var(--btn-shadow);
+  transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn:hover { transform: translateY(-1px); box-shadow: var(--btn-shadow-hover); }
+.btn.small { padding: 8px 14px; font-size: .88rem; box-shadow: none; }
+.btn svg { width: 18px; height: 18px; flex: none; }
+.btn.ghost { background: var(--panel); color: var(--fg); box-shadow: 0 0 0 1px var(--line-2) inset; }
+.btn.ghost:hover { box-shadow: 0 0 0 1px var(--faint) inset; }
+
+footer { padding: 40px 0 56px; color: var(--faint); font-size: .86rem; }
+footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; align-items: center; }
+footer .brand { font-size: .95rem; color: var(--muted); }
+footer a.r { color: var(--muted); }
+
+/* Download buttons follow the visitor's OS (shared/release.js sets <html data-os>). */
+.ic-mac { display: none; }
+:root[data-os="macos"] .ic-mac { display: block; }
+:root[data-os="macos"] .ic-win { display: none; }
+.btn.is-off { opacity: .55; pointer-events: none; box-shadow: none; }
+[data-alt-download] { color: var(--accent); font-weight: 600; }
+
+@media (max-width: 640px) {
+  nav.links, header .btn.small { display: none; }
+  header .lang { margin-left: auto; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn { transition: none; } }
